@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="example">
+<head>
+	<meta charset="UTF-8">
+	<title>Check API calls</title>
+</head>
+<body>
+	<div ng-controller="DemoCtrl">
+		<ul>
+			<li data-ng-repeat="video in videos.items">{{video.snippet.title}}</li>
+		</ul>
+	</div>
+	
+	<script src="vendor/angular.js"></script>
+	<script src="src/angular-google-api-wrapper.js"></script>
+	<script>
+		angular.module('example', ["angularGoogleApiWrapper"])
+		.config(['gapiServiceProvider', function (gapiServiceProvider) {
+			gapiServiceProvider.setApiKey('AIzaSyDUkvcl6xcEa2pJVlrPZyWBs76dPBEdNGs');
+		}])
+		.controller('DemoCtrl', ['$scope', 'googleYouTubeAPI', function ($scope, googleYouTubeAPI) {
+				$scope.videos = googleYouTubeAPI.activities.list({
+						part: 'snippet',
+						channelId: 'UChYheBnVeCfhCmqZfCUdJQw', // Ionic channel
+						maxResults: 50
+					});
+		}]);
+	</script>
+</body>
+</html>
