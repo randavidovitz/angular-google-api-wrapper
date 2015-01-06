@@ -19,9 +19,9 @@
 			gapiServiceProvider.setApiKey('AIzaSyDUkvcl6xcEa2pJVlrPZyWBs76dPBEdNGs');
 		}])
 		.controller('DemoCtrl', ['$scope', 'googleYouTubeAPI', function ($scope, googleYouTubeAPI) {
-				$scope.videos = googleYouTubeAPI.activities.list({
+				$scope.videos = googleYouTubeAPI.playlistItems.list({
 						part: 'snippet',
-						channelId: 'UChYheBnVeCfhCmqZfCUdJQw', // Ionic channel
+						playlistId: 'UUhYheBnVeCfhCmqZfCUdJQw', // Ionic channel's video playlist
 						maxResults: 50
 					});
 		}]);

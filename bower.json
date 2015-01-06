@@ -1,6 +1,6 @@
 {
   "name": "angular-google-api-wrapper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/angular-google-api-wrapper.js",
   "ignore": [
     "**/.*",

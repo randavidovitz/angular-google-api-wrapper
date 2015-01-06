@@ -80,5 +80,8 @@
 
 			this.activities = {};
 			this.activities.list = gapiService.ConstructAPICallMethod(youtubeAPIready, 'gapi.client.youtube.activities.list');
+		
+			this.playlistItems = {};
+			this.playlistItems.list = gapiService.ConstructAPICallMethod(youtubeAPIready, 'gapi.client.youtube.playlistItems.list');
 		});
 }());
